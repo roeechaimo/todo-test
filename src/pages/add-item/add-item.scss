@@ -1,0 +1,11 @@
+@import "../../theme/variables.scss";
+
+page-add-item {
+
+  ion-list {
+    span.err {
+      color: map_get($colors, danger);
+    }
+  }
+
+}

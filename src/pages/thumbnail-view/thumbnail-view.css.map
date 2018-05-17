@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAEE,2CAAwB;EACtB,SAAS,EAAE,IAAI",
+"sources": ["thumbnail-view.scss"],
+"names": [],
+"file": "thumbnail-view.css"
+}

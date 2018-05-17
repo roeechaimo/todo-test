@@ -1,0 +1,21 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title>Thumbnail View Page</ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+    <search-component [items]="items" (getModifiedItems)="getModifiedItems($event)"></search-component>
+    <ion-row>
+        <ion-col col-4 wrap *ngFor="let item of modifiedItems">
+            <ion-avatar item-start>
+                <img [src]="item?.item_image_url">
+            </ion-avatar>
+            <h6 text-center>{{item?.item_title}}</h6>
+        </ion-col>
+    </ion-row>
+</ion-content>
+
+<ion-footer>
+    <h6 text-center>Footer</h6>
+</ion-footer>

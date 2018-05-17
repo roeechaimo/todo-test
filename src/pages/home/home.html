@@ -1,0 +1,56 @@
+<ion-header>
+    <ion-navbar text-center>
+        <ion-row>
+            <ion-col col-2>
+            </ion-col>
+            <ion-col col-8>
+                <ion-title>
+                    Ionic test
+                </ion-title>
+            </ion-col>
+            <ion-col col-2>
+                <ion-icon name="grid" large (click)="goToThumbnailView()"></ion-icon>
+            </ion-col>
+        </ion-row>
+    </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+    <search-component [items]="items" (getModifiedItems)="getModifiedItems($event)"></search-component>
+    <ion-list no-lines>
+        <ion-list-header text-center>
+            <button ion-button (click)="toggleNameToNumber($event)">Convert names to numbers</button>
+        </ion-list-header>
+        <ion-item-group reorder="true" (ionItemReorder)="reorderItem($event)">
+            <ion-item *ngFor="let item of modifiedItems; let i = index">
+                <ion-card (click)="presentItemDetailsModal(item)" (swipe)="swipe($event)">
+                    <img [hidden]="!item?.show_image" [src]="item?.item_image_url"/>
+                    <ion-card-content>
+                        <ion-card-title [class.highlightedBackground]="item?.is_highlighted">
+                            {{toNumber ? (item?.item_title | nameToNumber) : (item?.item_title | titleCase)}}
+                        </ion-card-title>
+                        <p [class.highlightedBackground]="item?.is_highlighted">
+                            {{item?.item_body}}
+                        </p>
+                        <p [class.highlightedBackground]="item?.is_highlighted">
+                            {{item?.item_creation_date}}
+                        </p>
+                    </ion-card-content>
+                </ion-card>
+            </ion-item>
+        </ion-item-group>
+    </ion-list>
+</ion-content>
+
+<ion-footer >
+    <ion-row text-center>
+        <ion-col col-2>
+        </ion-col>
+        <ion-col col-8>
+            <h6 text-center>Footer</h6>
+        </ion-col>
+        <ion-col col-2>
+            <ion-icon name="add-circle" (click)="goToAddItemView()"></ion-icon>
+        </ion-col>
+    </ion-row>
+</ion-footer>

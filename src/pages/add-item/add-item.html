@@ -1,0 +1,43 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title>Add Item Page</ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+    <form [formGroup]="itemForm">
+        <ion-list>
+
+            <ion-list-header text-center>
+                <h5>Add item</h5>
+            </ion-list-header>
+
+            <ion-item>
+                <ion-label fixed>Item title</ion-label>
+                <ion-input id="itemTitle" type="text" formControlName="item_title"></ion-input>
+            </ion-item>
+            <span class="err" padding *ngIf="!validateItemTitle()">Must include at least 3 letters</span>
+
+            <ion-item>
+                <ion-label fixed>Item body</ion-label>
+                <ion-input id="itemBody" type="text" formControlName="item_body"></ion-input>
+            </ion-item>
+            <span class="err" padding *ngIf="!validateItemBody()">Must include at least 3 letters</span>
+
+            <ion-item>
+                <ion-label fixed>Item image url</ion-label>
+                <ion-input id="itemImageUrl" type="text" formControlName="item_image_url"></ion-input>
+            </ion-item>
+            <span class="err" padding *ngIf="!validateItemImageUrl()">Must include at least 3 letters</span>
+
+            <div padding text-center>
+                <button ion-button [disabled]="!itemForm.valid" (click)="saveItem(itemForm)">Add item</button>
+            </div>
+
+        </ion-list>
+    </form>
+</ion-content>
+
+<ion-footer>
+    <h6 text-center>Footer</h6>
+</ion-footer>

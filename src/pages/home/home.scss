@@ -1,0 +1,28 @@
+page-home {
+
+  ion-footer {
+    ion-col:last-child {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 200%;
+    }
+  }
+
+  ion-icon[name='grid'] {
+    font-size: 200%;
+  }
+
+  .highlightedText {
+    color: map-get($colors, dark);
+  }
+
+  .highlightedBackground {
+    background-color: map-get($colors, highlight);
+  }
+
+  img {
+    width: 30%;
+  }
+
+}

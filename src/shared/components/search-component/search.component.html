@@ -1,0 +1,15 @@
+<ion-row>
+    <ion-searchbar placeholder="Filter items" (ionInput)="getItems($event)"></ion-searchbar>
+</ion-row>
+<ion-row align-items-center>
+    <ion-col (click)="sortByName()" col-2 padding>
+        <ion-icon name="funnel" large></ion-icon>
+    </ion-col>
+    <ion-col (click)="sortByName()" col-5 padding>
+        <span>Sort by name</span>
+    </ion-col>
+    <ion-col (click)="cancelSort()" col-5 padding>
+        <span>Original order</span>
+    </ion-col>
+</ion-row>
+
