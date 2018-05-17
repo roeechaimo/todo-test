@@ -66,6 +66,8 @@ export class SearchComponent implements OnInit {
     }
 
     cancelSort() {
+        this.modifiedItems = typeof this.modifiedItems === 'undefined' || this.modifiedItems.length === 0 ?
+            this.items : this.modifiedItems;
         this.modifiedItems.sort((index1, index2) => {
             let itemAindex = index1.item_id;
             let itemBIndex = index2.item_id;
